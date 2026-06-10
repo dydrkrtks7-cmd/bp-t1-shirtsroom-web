@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <meta name="description" content="셔츠룸 웹 소개 - 우리는 기존 유흥 시스템을 부수고 단호한 서비스로 재정의한다. 강남 셔츠룸의 새로운 기준, 셔츠룸 웹. 전화 010-6279-0862">
+    <meta name="keywords" content="셔츠룸, 셔츠룸 웹, 강남셔츠룸, 셔츠룸추천, 셔츠룸정보, 밤문화, 유흥, 셔츠룸소개">
+    <link rel="canonical" href="https://dydrkrtks7-cmd.github.io/about">
+    <meta property="og:title" content="셔츠룸 웹 소개 - ACID YELLOW BRUTALIST">
+    <meta property="og:description" content="셔츠룸 웹 소개 - 우리는 기존 유흥 시스템을 부수고 단호한 서비스로 재정의한다. 강남 셔츠룸의 새로운 기준.">
+    <meta property="og:url" content="https://dydrkrtks7-cmd.github.io/about">
+    <title>소개 - 셔츠룸 웹 | ACID YELLOW BRUTALIST</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            background: #1a1a1a;
+            color: #e6e600;
+            line-height: 1.4;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #0d0d0d;
+            border-bottom: 4px solid #e6e600;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            display: inline-block;
+        }
+        .logo span {
+            color: #e6e600;
+            text-shadow: 3px 3px 0 #000;
+        }
+        nav {
+            display: flex;
+            gap: 30px;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        nav a {
+            color: #e6e600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            border-bottom-color: #e6e600;
+            transform: scale(1.05);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .hamburger span {
+            width: 30px;
+            height: 4px;
+            background: #e6e600;
+            border-radius: 2px;
+        }
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #0d0d0d;
+            border-bottom: 4px solid #e6e600;
+            padding: 20px;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .mobile-menu a {
+            color: #e6e600;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+            padding: 10px 0;
+        }
+        .mobile-menu a:hover {
+            background: #e6e600;
+            color: #0d0d0d;
+            padding-left: 10px;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a00 100%);
+            padding: 80px 0 60px;
+            border-bottom: 6px solid #e6e600;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+            text-shadow: 5px 5px 0 #000;
+        }
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ccc;
+        }
+        .section {
+            padding: 60px 0;
+            border-bottom: 2px solid #333;
+        }
+        .section:last-of-type {
+            border-bottom: none;
+        }
+        .section h2 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 30px;
+            border-left: 8px solid #e6e600;
+            padding-left: 20px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .card {
+            background: #0d0d0d;
+            border: 3px solid #e6e600;
+            padding: 30px;
+            box-shadow: 10px 10px 0 #000;
+        }
+        .card h3 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+        .card p {
+            color: #bbb;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        .card ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            font-size: 1rem;
+            color: #ccc;
+        }
+        .card ul li::before {
+            content: "▸ ";
+            color: #e6e600;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background: #e6e600;
+            color: #0d0d0d;
+            padding: 40px;
+            margin: 40px 0;
+            border: 4px solid #000;
+            text-align: center;
+        }
+        .highlight-box h3 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        .highlight-box p {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .team-card {
+            background: #0d0d0d;
+            border: 2px solid #e6e600;
+            padding: 25px;
+            text-align: center;
+        }
+        .team-card h4 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .team-card .role {
+            color: #e6e600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .team-card p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+        .timeline {
+            border-left: 4px solid #e6e600;
+            padding-left: 30px;
+            margin: 30px 0;
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: "●";
+            color: #e6e600;
+            position: absolute;
+            left: -38px;
+            font-size: 1.5rem;
+            top: 0;
+        }
+        .timeline-item .year {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #e6e600;
+        }
+        .timeline-item p {
+            color: #ccc;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+        .tel-link {
+            display: inline-block;
+            background: #e6e600;
+            color: #0d0d0d;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-decoration: none;
+            border: 4px solid #000;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+        .tel-link:hover {
+            background: #fff;
+            transform: scale(1.05);
+        }
+        footer {
+            background: #0d0d0d;
+            padding: 30px 0;
+            border-top: 4px solid #e6e600;
+            text-align: center;
+        }
+        footer p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-menu.active {
+                display: flex;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .section h2 {
+                font-size: 2rem;
+            }
+            .highlight-box h3 {
+                font-size: 1.5rem;
+            }
+            .logo {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">셔츠룸<span>웹</span></div>
+            <nav>
+                <a href="https://dydrkrtks7-cmd.github.io">홈</a>
+                <a href="https://dydrkrtks7-cmd.github.io/about">소개</a>
+                <a href="https://dydrkrtks7-cmd.github.io/services">서비스</a>
+                <a href="https://dydrkrtks7-cmd.github.io/contact">연락처</a>
+            </nav>
+            <div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <a href="https://dydrkrtks7-cmd.github.io">홈</a>
+            <a href="https://dydrkrtks7-cmd.github.io/about">소개</a>
+            <a href="https://dydrkrtks7-cmd.github.io/services">서비스</a>
+            <a href="https://dydrkrtks7-cmd.github.io/contact">연락처</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>SHIRTSROOM WEB<br>우리가 누군지 말해줄까?</h1>
+            <p>기존 유흥 시스템은 가라. 우리는 강남 셔츠룸의 판을 완전히 뒤집었다. 단호한 서비스, 충격적인 비주얼, 타협 없는 퀄리티. 이게 진짜 셔츠룸이다.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>STORY — 우리가 움직인 이유</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>분노에서 시작된 혁명</h3>
+                    <p>2022년, 강남의 한 셔츠룸. 우리는 실망했다. 거짓된 사진, 형편없는 서비스, 바가지 요금. 그날 우리는 결심했다. "직접 만들자. 진짜를." 그렇게 셔츠룸 웹이 탄생했다. 우리는 유흥 업계의 관행을 증오한다. 우리는 당신에게 진실만을 보여준다.</p>
+                </div>
+                <div class="card">
+                    <h3>단호함이 곧 미학</h3>
+                    <p>부드러운 말은 없다. 가식적인 이미지는 없다. 우리의 모든 페이지는 브루탈리즘에서 영감을 받았다. 거친 콘크리트 같은 단호함, 번개 같은 옐로우. 이게 우리의 정체성이다. 당신이 원하는 건 결과다. 우리는 결과로 말한다.</p>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h3>우리는 당신의 시간을 존중한다</h3>
+                <p>지금 전화해. 010-6279-0862. 30초면 예약 끝. 더 이상의 시간 낭비는 없다.</p>
+                <a href="tel:01062790862" class="tel-link">010-6279-0862</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>HISTORY — 우리가 걸어온 길</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">2022</div>
+                    <p>강남의 한 좌담회. 창업 멤버 4명이 모여 셔츠룸 웹의 첫 삽을 뜨다. 기존 업체들의 거짓말에 분노한 게 시작이었다.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2023</div>
+                    <p>베타 서비스 오픈. 첫 3개월 동안 200명의 실제 고객이 방문. 95% 재방문율. 입소문이 퍼지기 시작했다.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2024</div>
+                    <p>공식 런칭. 강남 셔츠룸 업계에서 가장 빠르게 성장하는 플랫폼으로 등극. 우리의 방식이 옳았다는 증거다.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2025</div>
+                    <p>현재. 우리는 멈추지 않는다. 더 단단한 시스템, 더 강력한 파트너십. 셔츠룸 웹은 계속 진화한다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>TEAM — 미친 사람들이 모였다</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <h4>김격</h4>
+                    <div class="role">FOUNDER / 전략</div>
+                    <p>전직 유흥업소 매니저. 10년간의 경험으로 쌓은 인사이트를 바탕으로 시스템을 설계했다. "고객이 왕이 아니라, 우리의 서비스가 왕이다."</p>
+                </div>
+                <div class="team-card">
+                    <h4>박단호</h4>
+                    <div class="role">디렉터 / 운영</div>
+                    <p>브루탈리즘 디자인의 광신도. 모든 페이지는 그의 손에서 탄생했다. "부드러운 건 지루해. 강하게 때려야 기억에 남는다."</p>
+                </div>
+                <div class="team-card">
+                    <h4>이철</h4>
+                    <div class="role">파트너십 / 영업</div>
+                    <p>강남 셔츠룸 업계의 전설적인 네트워커. 그는 단 3일 만에 50개 업소와 계약을 성사시켰다. "전화 한 통이면 끝."</p>
+                </div>
+                <div class="team-card">
+                    <h4>최진</h4>
+                    <div class="role">고객 경험 / 품질</div>
+                    <p>전직 호텔 컨시어지. 모든 서비스는 그의 엄격한 기준을 통과해야 한다. "1%의 불만도 용납하지 않는다."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>DIFFERENCE — 왜 셔츠룸 웹인가?</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>진짜 정보만</h3>
+                    <ul>
+                        <li>실시간 검증된 사진과 프로필만 게재</li>
+                        <li>가짜 리뷰
+</body>
+</html>

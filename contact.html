@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <meta name="description" content="셔츠룸 웹 문의 - 지금 당장 전화하라. 010-6279-0862. 강남 셔츠룸 예약, 위치, 운영시간. 망설임은 금물이다.">
+    <meta name="keywords" content="셔츠룸 문의, 셔츠룸 예약, 강남셔츠룸, 셔츠룸 위치, 셔츠룸 운영시간, 셔츠룸 번호">
+    <link rel="canonical" href="https://dydrkrtks7-cmd.github.io/contact">
+    <meta property="og:title" content="셔츠룸 웹 - 문의 | ACID YELLOW BRUTALIST">
+    <meta property="og:description" content="셔츠룸 웹 문의 - 지금 당장 전화하라. 010-6279-0862. 강남 셔츠룸 예약, 위치, 운영시간.">
+    <meta property="og:url" content="https://dydrkrtks7-cmd.github.io/contact">
+    <title>셔츠룸 웹 - 문의 | ACID YELLOW BRUTALIST</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #1a1a1a;
+            color: #f0f0f0;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        header {
+            background: #0d0d0d;
+            border-bottom: 3px solid #e6ff00;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #e6ff00;
+            text-shadow: 3px 3px 0 #000;
+        }
+        .logo span {
+            color: #ff0055;
+        }
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        nav a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            color: #e6ff00;
+            border-bottom-color: #e6ff00;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: #e6ff00;
+            display: block;
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: #0d0d0d;
+            border-bottom: 3px solid #e6ff00;
+            padding: 20px;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+        .mobile-menu a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+        .mobile-menu a:hover {
+            color: #e6ff00;
+        }
+        .hero {
+            padding: 60px 0 40px;
+            border-bottom: 2px solid #e6ff00;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: #e6ff00;
+            text-shadow: 4px 4px 0 #000;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 60px 0;
+        }
+        .contact-info {
+            background: #0d0d0d;
+            border: 2px solid #e6ff00;
+            padding: 30px;
+        }
+        .contact-info h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #e6ff00;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e6ff00;
+            padding-bottom: 10px;
+        }
+        .info-item {
+            margin-bottom: 20px;
+        }
+        .info-item h3 {
+            font-size: 0.85rem;
+            color: #ff0055;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .info-item p {
+            font-size: 1.1rem;
+            color: #f0f0f0;
+            line-height: 1.5;
+        }
+        .info-item a {
+            color: #e6ff00;
+            text-decoration: none;
+        }
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+        .tel-link {
+            display: inline-block;
+            background: #e6ff00;
+            color: #0d0d0d;
+            font-weight: 900;
+            font-size: 1.8rem;
+            padding: 15px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+        .tel-link:hover {
+            background: #ff0055;
+            color: #fff;
+        }
+        .map-container {
+            background: #0d0d0d;
+            border: 2px solid #e6ff00;
+            padding: 30px;
+        }
+        .map-container h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #e6ff00;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e6ff00;
+            padding-bottom: 10px;
+        }
+        .map-placeholder {
+            background: #2a2a2a;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px dashed #444;
+        }
+        .hours-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #222;
+            font-size: 0.95rem;
+        }
+        .hours-list li span:first-child {
+            color: #aaa;
+        }
+        .hours-list li span:last-child {
+            color: #e6ff00;
+            font-weight: 700;
+        }
+        .form-section {
+            padding: 60px 0;
+            border-top: 2px solid #e6ff00;
+        }
+        .form-section h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #e6ff00;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            background: #0d0d0d;
+            border: 2px solid #333;
+            color: #f0f0f0;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #e6ff00;
+            outline: none;
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .form-group select {
+            cursor: pointer;
+        }
+        .form-group select option {
+            background: #0d0d0d;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: #e6ff00;
+            color: #0d0d0d;
+            border: none;
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .submit-btn:hover {
+            background: #ff0055;
+            color: #fff;
+        }
+        .cta-block {
+            background: #0d0d0d;
+            border: 3px solid #e6ff00;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0 60px;
+        }
+        .cta-block h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #e6ff00;
+            margin-bottom: 15px;
+        }
+        .cta-block p {
+            color: #aaa;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        footer {
+            background: #0d0d0d;
+            border-top: 3px solid #e6ff00;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+        footer p {
+            color: #555;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-menu.active {
+                display: flex;
+            }
+            .hero h1 {
+                font-size: 2rem;
+                letter-spacing: 3px;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 40px 0;
+            }
+            .tel-link {
+                font-size: 1.3rem;
+                padding: 12px 20px;
+            }
+            .cta-block h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">셔츠룸<span>웹</span></div>
+            <nav>
+                <a href="index.html">홈</a>
+                <a href="about.html">소개</a>
+                <a href="services.html">서비스</a>
+                <a href="contact.html" style="color: #e6ff00; border-bottom-color: #e6ff00;">문의</a>
+                <a href="faq.html">FAQ</a>
+            </nav>
+            <div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html">홈</a>
+            <a href="about.html">소개</a>
+            <a href="services.html">서비스</a>
+            <a href="contact.html">문의</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>문의</h1>
+            <p>망설이는 순간, 다른 놈이 네 자리를 차지한다. 지금 당장 연락해라. 기다리지 않는다.</p>
+        </div>
+    </section>
+
+    <section class="contact-grid">
+        <div class="container" style="display: contents;">
+            <div class="contact-info">
+                <h2>연락처</h2>
+                <div class="info-item">
+                    <h3>전화</h3>
+                    <a href="tel:010-6279-0862" class="tel-link">010-6279-0862</a>
+                    <p style="margin-top: 10px; color: #ff0055; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">24시간 · 주말 · 공휴일</p>
+                </div>
+                <div class="info-item">
+                    <h3>위치</h3>
+                    <p>서울특별시 강남구<br>논현동 123-45<br>B1층 · 셔츠룸 웹</p>
+                </div>
+                <div class="info-item">
+                    <h3>이메일</h3>
+                    <a href="mailto:shirtsroom@web.kr">shirtsroom@web.kr</a>
+                </div>
+                <div class="info-item">
+                    <h3>운영시간</h3>
+                    <ul class="hours-list">
+                        <li><span>월요일 – 목요일</span><span>20:00 – 04:00</span></li>
+                        <li><span>금요일 – 토요일</span><span>20:00 – 06:00</span></li>
+                        <li><span>일요일</span><span>21:00 – 03:00</span></li>
+                        <li><span>공휴일</span><span>변동 · 전화 확인</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <h2>오시는 길</h2>
+                <div class="map-placeholder">
+                    <span>지도 영역 · 강남구 논현동</span>
+                </div>
+                <p style="margin-top: 15px; color: #aaa; font-size: 0.9rem; line-height: 1.6;">
+                    강남역 3번 출구 도보 5분. 지하철, 버스 모두 접근 가능.<br>
+                    주차 가능 (발렛 무료). 네비게이션: '셔츠룸 웹' 검색.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <div class="container">
+            <h2>예약 문의</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" placeholder="예: 김철수" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">전화번호</label>
+                    <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">예약 희망 시간</label>
+                    <select id="time" name="time" required>
+                        <option value="">선택하세요</option>
+                        <option value="20-22">20:00 – 22:00</option>
+                        <option value="22-00">22:00 – 00:00</option>
+                        <option value="00-02">00:00 – 02:00</option>
+                        <option value="02-04">02:00 – 04:00</option>
+                        <option value="기타">기타 (메모에 작성)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="people">인원</label>
+                    <select id="people" name="people" required>
+                        <option value="">선택하세요</option>
+                        <option value="1">1명</option>
+                        <option value="2">2명</option>
+                        <option value="3">3명</option>
+</body>
+</html>

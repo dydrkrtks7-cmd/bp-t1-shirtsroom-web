@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <meta name="description" content="셔츠룸 웹 서비스 - 당신의 밤을 지배하는 서비스와 가격. 투명한 가격표, 압도적인 퀄리티. 전화 010-6279-0862">
+    <meta name="keywords" content="셔츠룸, 셔츠룸 웹, 강남셔츠룸, 셔츠룸추천, 셔츠룸정보, 셔츠룸가격, 밤문화, 유흥">
+    <link rel="canonical" href="https://dydrkrtks7-cmd.github.io">
+    <meta property="og:title" content="셔츠룸 웹 - 서비스 | ACID YELLOW BRUTALIST">
+    <meta property="og:description" content="셔츠룸 웹 서비스 - 투명한 가격, 압도적인 퀄리티. 당신의 선택을 기다린다.">
+    <meta property="og:url" content="https://dydrkrtks7-cmd.github.io">
+    <title>셔츠룸 웹 - 서비스</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            background: #1a1a1a;
+            color: #f5f5f5;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #0d0d0d;
+            padding: 15px 0;
+            border-bottom: 4px solid #e6ff00;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #e6ff00;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            text-shadow: 3px 3px 0 #000;
+        }
+        .logo span {
+            color: #fff;
+            background: #e6ff00;
+            padding: 2px 8px;
+            margin-left: 5px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 8px 16px;
+            border: 2px solid transparent;
+            transition: 0.2s;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            border-color: #e6ff00;
+            color: #e6ff00;
+            background: rgba(230, 255, 0, 0.1);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .hamburger span {
+            width: 30px;
+            height: 4px;
+            background: #e6ff00;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+        }
+        .mobile-menu a {
+            color: #fff;
+            font-size: 2rem;
+            padding: 20px;
+            text-decoration: none;
+            border-bottom: 2px solid #e6ff00;
+            width: 80%;
+            text-align: center;
+        }
+        .mobile-menu a:hover {
+            background: #e6ff00;
+            color: #000;
+        }
+        @media (max-width: 768px) {
+            nav a:not(.tel-link) {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-menu.active {
+                display: flex;
+            }
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+        .tel-link {
+            background: #e6ff00;
+            color: #000 !important;
+            font-weight: 900;
+            padding: 8px 20px;
+            border: none !important;
+        }
+        .tel-link:hover {
+            background: #ccdd00 !important;
+            color: #000 !important;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0d0d0d 0%, #2a2a2a 100%);
+            padding: 80px 0 60px;
+            border-bottom: 4px solid #e6ff00;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            color: #e6ff00;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            text-shadow: 4px 4px 0 #000;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.4rem;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #333;
+        }
+        .section-title {
+            font-size: 2.8rem;
+            color: #e6ff00;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 4px;
+            background: #e6ff00;
+            margin-top: 10px;
+        }
+
+        /* Service Cards */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .service-card {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            padding: 30px;
+            transition: 0.3s;
+            position: relative;
+        }
+        .service-card:hover {
+            border-color: #e6ff00;
+            transform: translateY(-5px);
+        }
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: #e6ff00;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .service-card .price {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+            background: #0d0d0d;
+            padding: 10px;
+            border-left: 4px solid #e6ff00;
+            margin: 15px 0;
+        }
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .service-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            font-size: 1rem;
+            color: #ccc;
+        }
+        .service-card ul li::before {
+            content: '▸ ';
+            color: #e6ff00;
+            font-weight: bold;
+        }
+        .service-card .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #e6ff00;
+            color: #000;
+            padding: 5px 15px;
+            font-weight: 900;
+            font-size: 0.9rem;
+            transform: rotate(5deg);
+        }
+
+        /* Price Table */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1.1rem;
+        }
+        .price-table th {
+            background: #e6ff00;
+            color: #000;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            border: 2px solid #333;
+        }
+        .price-table td {
+            padding: 15px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+        .price-table tr:nth-child(even) {
+            background: #222;
+        }
+        .price-table tr:hover {
+            background: #2a2a2a;
+        }
+        .price-table .highlight {
+            background: #e6ff00 !important;
+            color: #000;
+            font-weight: 900;
+        }
+
+        /* Comparison */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .compare-box {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            padding: 30px;
+        }
+        .compare-box h3 {
+            font-size: 1.6rem;
+            color: #e6ff00;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .compare-box ul {
+            list-style: none;
+        }
+        .compare-box ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+            font-size: 1rem;
+        }
+        .compare-box .vs {
+            font-size: 3rem;
+            color: #e6ff00;
+            text-align: center;
+            font-weight: 900;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: #0d0d0d;
+            padding: 60px 0;
+            text-align: center;
+            border-top: 4px solid #e6ff00;
+            border-bottom: 4px solid #e6ff00;
+        }
+        .cta-section h2 {
+            font-size: 3rem;
+            color: #e6ff00;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #e6ff00;
+            color: #000;
+            padding: 15px 50px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: 3px solid #fff;
+            transition: 0.2s;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background: #fff;
+            border-color: #e6ff00;
+            transform: scale(1.05);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            margin-bottom: 15px;
+            padding: 20px;
+        }
+        .faq-item h4 {
+            color: #e6ff00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .faq-item p {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        footer {
+            background: #0d0d0d;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 4px solid #e6ff00;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #e6ff00;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .compare-grid {
+                grid-template-columns: 1fr;
+            }
+            .price-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">셔츠룸<span>웹</span></div>
+                <div>
+                    <a href="index.html">홈</a>
+                    <a href="about.html">소개</a>
+                    <a href="services.html" style="border-color: #e6ff00;">서비스</a>
+                    <a href="contact.html">문의</a>
+                    <a href="tel:01062790862" class="tel-link">010-6279-0862</a>
+                </div>
+                <div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('active')">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html">홈</a>
+            <a href="about.html">소개</a>
+            <a href="services.html">서비스</a>
+            <a href="contact.html">문의</a>
+            <a href="tel:01062790862" style="background:#e6ff00;color:#000;">010-6279-0862</a>
+            <a href="#" onclick="document.querySelector('.mobile-menu').classList.remove('active')" style="border:none;font-size:1rem;">닫기</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>서비스</h1>
+            <p>거짓 없는 가격, 압도적인 퀄리티. 당신의 기준을 깨라.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">셔츠룸 패키지</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="badge">BEST</div>
+                    <h3>스탠다드</h3>
+                    <div class="price">₩200,000</div>
+                    <ul>
+                        <li>기본 셔츠룸 서비스</li>
+                        <li>프리미엄 주류 1병</li>
+                        <li>안주 세트</li>
+                        <li>2시간 이용</li>
+                        <li>전용 테이블</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="badge">HOT</div>
+                    <h3>프리미엄</h3>
+                    <div class="price">₩400,000</div>
+                    <ul>
+                        <li>VIP 셔츠룸 서비스</li>
+                        <li>프리미엄 주류 2병</li>
+                        <li>특선 안주 코스</li>
+                        <li>3시간 이용</li>
+                        <li>프라이빗 룸</li>
+                        <li>전담 매니저</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>VIP</h3>
+                    <div class="price">₩800,000</div>
+                    <ul>
+                        <li>로얄 셔츠룸 서비스</li>
+                        <li>최상급 주류 무제한</li>
+                        <li>쉐프 특선 코스</li>
+                        <li>5시간 이용</li>
+                        <li>최상위 프라이빗 룸</li>
+                        <li>전담 팀 배정</li>
+                        <li>픽업 서비스</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">가격 비교표</h2>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>항목</th>
+                        <th>스탠다드</th>
+                        <th>프리미엄</th>
+                        <th>VIP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>이용 시간</td>
+                        <td>2시간</td>
+                        <td>3시간</td>
+                        <td>5시간</td>
+                    </tr>
+                    <tr>
+                        <td>주류</td>
+                        <td>1병</td>
+                        <td>2병</td>
+                        <td>무제한</td>
+                    </tr>
+                    <tr>
+                        <td>안주</td>
+                        <td>기본</td>
+                        <td>특선</td>
+                        <td>쉐프 코스</td>
+                    </tr>
+                    <tr>
+                        <td>룸 타입</td>
+                        <td>일반</td>
+                        <td>프라이빗</td>
+                        <td>로얄</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>추천 대상</td>
+                        <td>첫 방문</td>
+                        <td>비즈니스</td>
+                        <td>특별한 날</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>

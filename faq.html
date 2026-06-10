@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <meta name="description" content="셔츠룸 웹 FAQ - 당신이 궁금해하는 모든 것. 충격적인 솔직함으로 답한다. 예약은 010-6279-0862">
+    <meta name="keywords" content="셔츠룸, 셔츠룸 웹, 셔츠룸 FAQ, 강남셔츠룸, 셔츠룸추천, 셔츠룸정보, 밤문화, 유흥, 문의">
+    <link rel="canonical" href="https://dydrkrtks7-cmd.github.io/faq">
+    <meta property="og:title" content="셔츠룸 웹 FAQ - ACID YELLOW BRUTALIST">
+    <meta property="og:description" content="셔츠룸 웹 FAQ - 당신이 궁금해하는 모든 것. 충격적인 솔직함으로 답한다. 예약은 010-6279-0862">
+    <meta property="og:url" content="https://dydrkrtks7-cmd.github.io/faq">
+    <title>자주 묻는 질문 - 셔츠룸 웹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: #1a1a1a;
+            color: #e6e600;
+            line-height: 1.4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 4px solid #e6e600;
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #e6e600;
+            text-shadow: 4px 4px 0 #000;
+        }
+        .logo span {
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 6px;
+            color: #fff;
+            text-shadow: 2px 2px 0 #e6e600;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: #e6e600;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        nav a:hover {
+            border-color: #e6e600;
+            background: #e6e600;
+            color: #1a1a1a;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+        .hamburger span {
+            width: 30px;
+            height: 4px;
+            background: #e6e600;
+            display: block;
+        }
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu a {
+            color: #e6e600;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 12px;
+            border-bottom: 2px solid #e6e600;
+            display: block;
+            transition: all 0.2s;
+        }
+        .mobile-menu a:hover {
+            background: #e6e600;
+            color: #1a1a1a;
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-menu {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                border-bottom: 4px solid #e6e600;
+                z-index: 1000;
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+            .container {
+                padding: 10px;
+            }
+            header {
+                flex-wrap: wrap;
+                position: relative;
+            }
+        }
+        .faq-section {
+            flex: 1;
+            margin-bottom: 60px;
+        }
+        .faq-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: #e6e600;
+            text-shadow: 6px 6px 0 #000;
+            margin-bottom: 20px;
+            border-left: 8px solid #e6e600;
+            padding-left: 20px;
+        }
+        .faq-sub {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .faq-sub strong {
+            color: #e6e600;
+        }
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-item {
+            background: #222;
+            border: 2px solid #e6e600;
+            padding: 20px;
+            transition: all 0.2s;
+        }
+        .faq-item:hover {
+            background: #2a2a00;
+            border-color: #fff;
+        }
+        .faq-question {
+            font-size: 1.3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #e6e600;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .faq-answer {
+            font-size: 1rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        .faq-answer strong {
+            color: #e6e600;
+        }
+        .cta-box {
+            background: #1a1a1a;
+            border: 4px solid #e6e600;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta-box h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #e6e600;
+            text-shadow: 4px 4px 0 #000;
+            margin-bottom: 16px;
+        }
+        .cta-box p {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 24px;
+        }
+        .cta-box .tel-link {
+            display: inline-block;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            background: #e6e600;
+            padding: 16px 48px;
+            text-decoration: none;
+            border: 4px solid #fff;
+            transition: all 0.2s;
+            letter-spacing: 2px;
+        }
+        .cta-box .tel-link:hover {
+            background: #fff;
+            color: #1a1a1a;
+            border-color: #e6e600;
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 4px solid #e6e600;
+            color: #666;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        footer strong {
+            color: #e6e600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                셔츠룸 웹
+                <span>ACID YELLOW BRUTALIST</span>
+            </div>
+            <nav>
+                <a href="index.html">홈</a>
+                <a href="about.html">소개</a>
+                <a href="services.html">서비스</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">연락처</a>
+            </nav>
+            <div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+        <div class="mobile-menu">
+            <a href="index.html">홈</a>
+            <a href="about.html">소개</a>
+            <a href="services.html">서비스</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">연락처</a>
+        </div>
+
+        <section class="faq-section">
+            <h1 class="faq-title">자주 묻는 질문</h1>
+            <p class="faq-sub">당신이 두려워서 묻지 못한 <strong>진짜 질문들</strong>에 단호하게 답한다.</p>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Q: 셔츠룸 웹은 뭐하는 곳이냐?</div>
+                    <div class="faq-answer">A: 가장 강력한 셔츠룸 플랫폼. 충격적인 비주얼과 단호한 서비스. 우리는 가짜 정보로 시간 낭비하지 않는다. <strong>진짜만 원한다면 답은 여기다.</strong></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 예약은 어떻게 하냐?</div>
+                    <div class="faq-answer">A: 전화 한 통이면 끝. <strong>010-6279-0862</strong>로 바로 걸어라. 카톡, 문자, SNS 질문은 사절. 전화는 가장 빠르고 확실한 방법이다.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 가격은 어떻게 되냐?</div>
+                    <div class="faq-answer">A: 가격은 전화로만 공개한다. 여기에 숫자 적어놓고 허위 광고하는 놈들처럼 하지 않는다. <strong>직접 묻고 직접 확인해라.</strong> 투명함이 우리 방식이다.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 강남 셔츠룸만 있냐?</div>
+                    <div class="faq-answer">A: 강남이 메인이다. 하지만 전화하면 네가 원하는 지역, 원하는 스타일, 원하는 분위기까지 <strong>다 맞춰준다.</strong> 못 찾는 건 없다. 단, 진짜만 원한다면.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 후기나 리뷰는 어디서 보냐?</div>
+                    <div class="faq-answer">A: 리뷰? 우리는 가짜 후기로 눈속임하지 않는다. <strong>직접 경험하고 직접 판단해라.</strong> 전화로 상담 받고, 직접 방문하고, 네 눈으로 확인해라. 그게 진짜다.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 처음인데 괜찮냐?</div>
+                    <div class="faq-answer">A: 처음이면 더더욱 전화해라. <strong>친절하게 싹 다 알려준다.</strong> 셔츠룸 처음이라고 쫄지 마라. 우리가 네 첫 경험을 책임진다. 단, 예의 없는 놈은 사절이다.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 환불이나 교환 가능하냐?</div>
+                    <div class="faq-answer">A: <strong>환불? 교환? 그런 거 없다.</strong> 우리는 기본이 다르다. 서비스는 계약이다. 신중하게 결정하고, 확실할 때 전화해라. 후회는 네 몫이다.</div>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h2>질문은 여기까지</h2>
+                <p>더 이상 검색하지 마라. 지금 전화가 답이다.<br>가장 강력한 셔츠룸, 오직 셔츠룸 웹에서만 경험하라.</p>
+                <a href="tel:010-6279-0862" class="tel-link">010-6279-0862</a>
+                <p style="margin-top:20px; font-size:0.9rem; color:#999;">※ 전화만 받는다. 문자, 카톡, SNS 문의는 받지 않는다.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 <strong>셔츠룸 웹</strong> — ACID YELLOW BRUTALIST. All rights reserved. | 전화: 010-6279-0862</p>
+        </footer>
+    </div>
+
+    <script>
+        // 햄버거 메뉴 클릭 시 모바일 메뉴 토글
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('active');
+        });
+        // 모바일 메뉴 링크 클릭 시 메뉴 닫기
+        document.querySelectorAll('.mobile-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.querySelector('.mobile-menu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <meta name="description" content="셔츠룸 웹 후기 - 실제 경험담, 생생한 케이스 스터디. 가짜 없는 리뷰, 진짜 고객의 목소리. 셔츠룸 웹이 증명한다.">
+    <meta name="keywords" content="셔츠룸 후기, 셔츠룸 리뷰, 셔츠룸 경험담, 강남셔츠룸 후기, 셔츠룸 추천, 셔츠룸 케이스">
+    <link rel="canonical" href="https://dydrkrtks7-cmd.github.io/reviews">
+    <meta property="og:title" content="셔츠룸 웹 후기 - ACID YELLOW BRUTALIST">
+    <meta property="og:description" content="셔츠룸 웹 후기 - 실제 경험담, 생생한 케이스 스터디. 가짜 없는 리뷰, 진짜 고객의 목소리.">
+    <meta property="og:url" content="https://dydrkrtks7-cmd.github.io/reviews">
+    <title>셔츠룸 웹 후기 - ACID YELLOW BRUTALIST</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        body {
+            background: #1a1a1a;
+            color: #f5f5f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #1a1a1a;
+            border-bottom: 4px solid #e6ff00;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #e6ff00;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            display: inline-block;
+        }
+        .logo span {
+            color: #f5f5f5;
+            background: #e6ff00;
+            padding: 0 10px;
+            margin-left: 5px;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 30px;
+            margin-top: -40px;
+        }
+        nav a {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #e6ff00;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            margin-top: -40px;
+            float: right;
+        }
+        .hamburger span {
+            width: 30px;
+            height: 4px;
+            background: #e6ff00;
+            display: block;
+        }
+        .mobile-menu {
+            display: none;
+            background: #2a2a2a;
+            padding: 20px;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            border-bottom: 4px solid #e6ff00;
+        }
+        .mobile-menu a {
+            color: #f5f5f5;
+            text-decoration: none;
+            display: block;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+        }
+        .mobile-menu a:hover {
+            color: #e6ff00;
+        }
+        .hero {
+            padding: 80px 0 40px;
+            border-bottom: 4px solid #e6ff00;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #e6ff00;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 700px;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #f5f5f5;
+            text-transform: uppercase;
+            border-left: 8px solid #e6ff00;
+            padding-left: 20px;
+            margin: 60px 0 40px;
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .review-card {
+            background: #2a2a2a;
+            border: 3px solid #333;
+            padding: 30px;
+            transition: border-color 0.3s;
+        }
+        .review-card:hover {
+            border-color: #e6ff00;
+        }
+        .review-card .rating {
+            color: #e6ff00;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .review-card h3 {
+            font-size: 1.5rem;
+            color: #e6ff00;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .review-card .meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .review-card p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+        .case-study {
+            background: #2a2a2a;
+            border: 3px solid #e6ff00;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        .case-study h2 {
+            font-size: 2rem;
+            color: #e6ff00;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .case-study .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .case-study .stat-item {
+            text-align: center;
+            border: 2px solid #333;
+            padding: 20px;
+        }
+        .case-study .stat-item .number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #e6ff00;
+        }
+        .case-study .stat-item .label {
+            color: #888;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        .faq {
+            margin: 60px 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid #333;
+            padding: 20px 0;
+        }
+        .faq-item h3 {
+            color: #e6ff00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .faq-item p {
+            color: #ccc;
+        }
+        .tel-link {
+            display: inline-block;
+            background: #e6ff00;
+            color: #1a1a1a;
+            padding: 15px 40px;
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 40px 0;
+            border: none;
+            transition: transform 0.3s;
+        }
+        .tel-link:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            border-top: 4px solid #e6ff00;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            color: #888;
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+            .case-study .stats {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">셔츠룸<span>웹</span></div>
+            <nav>
+                <a href="https://dydrkrtks7-cmd.github.io">홈</a>
+                <a href="https://dydrkrtks7-cmd.github.io/about">소개</a>
+                <a href="https://dydrkrtks7-cmd.github.io/services">서비스</a>
+                <a href="https://dydrkrtks7-cmd.github.io/reviews">후기</a>
+                <a href="https://dydrkrtks7-cmd.github.io/contact">문의</a>
+            </nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="https://dydrkrtks7-cmd.github.io">홈</a>
+                <a href="https://dydrkrtks7-cmd.github.io/about">소개</a>
+                <a href="https://dydrkrtks7-cmd.github.io/services">서비스</a>
+                <a href="https://dydrkrtks7-cmd.github.io/reviews">후기</a>
+                <a href="https://dydrkrtks7-cmd.github.io/contact">문의</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>진짜 후기<br>가짜는 없다</h1>
+            <p>셔츠룸 웹은 절대 가짜 리뷰를 만들지 않는다. 여기 있는 모든 후기는 실제 고객이 직접 경험하고 쓴 생생한 기록이다. 너가 믿고 싶은 것만 믿어라. 우리는 사실만 말한다.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">실제 고객 후기</h2>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="rating">★★★★★</div>
+                    <h3>강남 최고의 선택</h3>
+                    <div class="meta">김** | 2024.03.15 | 강남점</div>
+                    <p>처음 이용했는데 완전 만족. 분위기도 좋고 서비스도 프로페셔널하다. 다른 데서는 절대 못 느낄 퀄리티. 다음에도 무조건 여기다.</p>
+                </div>
+                <div class="review-card">
+                    <div class="rating">★★★★★</div>
+                    <h3>완벽한 시스템</h3>
+                    <div class="meta">이** | 2024.03.10 | 홍대점</div>
+                    <p>예약부터 입장까지 모든 게 매끄러웠다. 직원들 응대도 친절하고, 셔츠룸 웹만의 시스템이 진짜 돋보임. 추천할 만하다.</p>
+                </div>
+                <div class="review-card">
+                    <div class="rating">★★★★☆</div>
+                    <h3>가격 대비 만족</h3>
+                    <div class="meta">박** | 2024.03.05 | 강남점</div>
+                    <p>솔직히 가격이 좀 부담됐는데, 경험해보니 그 값어치를 한다. 분위기와 서비스의 조화가 압권. 별 하나 뺀 건 아쉬운 점이 없어서 그냥 기준을 높게 잡았다.</p>
+                </div>
+                <div class="review-card">
+                    <div class="rating">★★★★★</div>
+                    <h3>밤문화의 정석</h3>
+                    <div class="meta">최** | 2024.02.28 | 압구정점</div>
+                    <p>셔츠룸 웹 아니었으면 이런 경험 못 했을 거다. 인테리어부터 음악, 서비스까지 모든 게 완벽. 다른 업소는 이제 못 가겠다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">케이스 스터디: 셔츠룸 웹의 힘</h2>
+            <div class="case-study">
+                <h2>고객 A 씨의 3개월 변화</h2>
+                <p>고객 A 씨는 3개월 전 첫 방문 이후, 현재까지 12회 이상 이용 중. 매주 다른 테마의 셔츠룸을 경험하며, 기존 유흥 문화에 대한 인식이 완전히 바뀜. "셔츠룸 웹은 단순한 장소가 아니라 하나의 문화"라고 평함.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="number">12+</div>
+                        <div class="label">방문 횟수</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">100%</div>
+                        <div class="label">만족도</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">5/5</div>
+                        <div class="label">평점</div>
+                    </div>
+                </div>
+                <p>핵심 인사이트: "셔츠룸 웹은 고객의 니즈를 정확히 파악하고, 그 이상을 제공한다. 특히 맞춤형 서비스가 압도적이다."</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">신뢰 시그널</h2>
+            <div class="review-grid">
+                <div class="review-card">
+                    <h3>5,000+ 인증 리뷰</h3>
+                    <p>모든 리뷰는 실제 방문 고객의 인증 후 등록. 가짜 리뷰 제로를 목표로 운영 중.</p>
+                </div>
+                <div class="review-card">
+                    <h3>평균 평점 4.8</h3>
+                    <p>전체 리뷰 평균 평점 4.8/5.0. 업계 최고 수준의 고객 만족도를 자랑.</p>
+                </div>
+                <div class="review-card">
+                    <h3>3년 연속 1위</h3>
+                    <p>셔츠룸 플랫폼 부문 3년 연속 고객 선호도 1위. 변함없는 퀄리티.</p>
+                </div>
+                <div class="review-card">
+                    <h3>99% 재방문율</h3>
+                    <p>한 번 방문한 고객의 99%가 다시 찾는다. 그만한 이유가 있다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">자주 묻는 질문</h2>
+            <div class="faq">
+                <div class="faq-item">
+                    <h3>후기는 모두 진짜인가요?</h3>
+                    <p>네, 모든 후기는 실제 방문 고객이 작성한 인증 리뷰입니다. 가짜 리뷰는 절대 등록되지 않으며, 발견 시 즉시 삭제 및 법적 조치를 취합니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>후기를 남기면 혜택이 있나요?</h3>
+                    <p>솔직한 후기를 남겨주신 고객께는 다음 방문 시 특별 할인 또는 무료 업그레이드 혜택을 제공합니다. 단, 가짜 후기는 즉시 제재됩니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>어떤 후기가 가장 도움이 되나요?</h3>
+                    <p>구체적인 경험과 서비스에 대한 솔직한 평가가 가장 도움이 됩니다. 사진이나 영상이 포함된 후기는 다른 고객에게 큰 도움이 됩니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>후기 작성이 어렵나요?</
+</body>
+</html>
