@@ -7,10 +7,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-User-agent: Yeti
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-Sitemap: https://shirtsroom.website/sitemap.xml
+Sitemap: https://shirtsroom-web-shirt-review.link-hub.org/sitemap.xml
