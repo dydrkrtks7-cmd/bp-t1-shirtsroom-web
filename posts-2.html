@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t1-shirtsroom-web</title>
+  <meta name="description" content="t1-shirtsroom-web에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://balsan-shirts-note.best-samseong-hotplace.xyz/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ body {
+ font-family: 'Arial Black', 'Impact', sans-serif;
+ background: #1a1a1a;
+ color: #e6e600;
+ line-height: 1.4;
+ min-height: 100vh;
+ }
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px;
+ }
+ header {
+ background: #0d0d0d;
+ border-bottom: 4px solid #e6e600;
+ padding: 15px 0;
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ }
+ .logo {
+ font-size: 2.2rem;
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: -2px;
+ display: inline-block;
+ }
+ .logo span {
+ color: #e6e600;
+ text-shadow: 3px 3px 0 #000;
+ }
+ nav {
+ display: flex;
+ gap: 30px;
+ justify-content: flex-end;
+ align-items: center;
+ }
+ nav a {
+ color: #e6e600;
+ text-decoration: none;
+ font-size: 1.1rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ padding: 5px 0;
+ border-bottom: 2px solid transparent;
+ transition: 0.2s;
+ }
+ nav a:hover {
+ border-bottom-color: #e6e600;
+ transform: scale(1.05);
+ }
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ gap: 5px;
+ }
+ .hamburger span {
+ width: 30px;
+ height: 4px;
+ background: #e6e600;
+ border-radius: 2px;
+ }
+ .mobile-menu {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ width: 100%;
+ background: #0d0d0d;
+ border-bottom: 4px solid #e6e600;
+ padding: 20px;
+ flex-direction: column;
+ gap: 15px;
+ }
+ .mobile-menu a {
+ color: #e6e600;
+ text-decoration: none;
+ font-size: 1.3rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ border-bottom: 1px solid #333;
+ padding: 10px 0;
+ }
+ .mobile-menu a:hover {
+ background: #e6e600;
+ color: #0d0d0d;
+ padding-left: 10px;
+ }
+ .hero {
+ background: linear-gradient(135deg, #0d0d0d 0%, #1a1a00 100%);
+ padding: 80px 0 60px;
+ border-bottom: 6px solid #e6e600;
+ text-align: center;
+ }
+ .hero h1 {
+ font-size: 4rem;
+ text-transform: uppercase;
+ letter-spacing: -3px;
+ margin-bottom: 20px;
+ text-shadow: 5px 5px 0 #000;
+ }
+ .hero p {
+ font-size: 1.4rem;
+ max-width: 800px;
+ margin: 0 auto;
+ color: #ccc;
+ }
+ .section {
+ padding: 60px 0;
+ border-bottom: 2px solid #333;
+ }
+ .section:last-of-type {
+ border-bottom: none;
+ }
+ .section h2 {
+ font-size: 2.8rem;
+ text-transform: uppercase;
+ letter-spacing: -2px;
+ margin-bottom: 30px;
+ border-left: 8px solid #e6e600;
+ padding-left: 20px;
+ }
+ .grid-2 {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ }
+ .card {
+ background: #0d0d0d;
+ border: 3px solid #e6e600;
+ padding: 30px;
+ box-shadow: 10px 10px 0 #000;
+ }
+ .card h3 {
+ font-size: 1.8rem;
+ text-transform: uppercase;
+ margin-bottom: 15px;
+ letter-spacing: -1px;
+ }
+ .card p {
+ color: #bbb;
+ font-size: 1.1rem;
+ line-height: 1.6;
+ }
+ .card ul {
+ list-style: none;
+ margin-top: 15px;
+ }
+ .card ul li {
+ padding: 8px 0;
+ border-bottom: 1px solid #333;
+ font-size: 1rem;
+ color: #ccc;
+ }
+ .card ul li::before {
+ content: "▸ ";
+ color: #e6e600;
+ font-weight: bold;
+ }
+ .highlight-box {
+ background: #e6e600;
+ color: #0d0d0d;
+ padding: 40px;
+ margin: 40px 0;
+ border: 4px solid #000;
+ text-align: center;
+ }
+ .highlight-box h3 {
+ font-size: 2.2rem;
+ text-transform: uppercase;
+ margin-bottom: 15px;
+ }
+ .highlight-box p {
+ font-size: 1.2rem;
+ font-weight: bold;
+ }
+ .team-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 30px;
+ margin-top: 30px;
+ }
+ .team-card {
+ background: #0d0d0d;
+ border: 2px solid #e6e600;
+ padding: 25px;
+ text-align: center;
+ }
+ .team-card h4 {
+ font-size: 1.5rem;
+ text-transform: uppercase;
+ margin-bottom: 5px;
+ }
+ .team-card .role {
+ color: #e6e600;
+ font-size: 0.9rem;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ margin-bottom: 15px;
+ }
+ .team-card p {
+ color: #bbb;
+ font-size: 0.95rem;
+ }
+ .timeline {
+ border-left: 4px solid #e6e600;
+ padding-left: 30px;
+ margin: 30px 0;
+ }
+ .timeline-item {
+ margin-bottom: 30px;
+ position: relative;
+ }
+ .timeline-item::before {
+ content: "●";
+ color: #e6e600;
+ position: absolute;
+ left: -38px;
+ font-size: 1.5rem;
+ top: 0;
+ }
+ .timeline-item .year {
+ font-size: 1.8rem;
+ font-weight: 900;
+ color: #e6e600;
+ }
+ .timeline-item p {
+ color: #ccc;
+ font-size: 1rem;
+ margin-top: 5px;
+ }
+ .tel-link {
+ display: inline-block;
+ background: #e6e600;
+ color: #0d0d0d;
+ padding: 15px 40px;
+ font-size: 1.5rem;
+ font-weight: 900;
+ text-decoration: none;
+ border: 4px solid #000;
+ margin-top: 20px;
+ transition: 0.2s;
+ }
+ .tel-link:hover {
+ background: #fff;
+ transform: scale(1.05);
+ }
+ footer {
+ background: #0d0d0d;
+ padding: 30px 0;
+ border-top: 4px solid #e6e600;
+ text-align: center;
+ }
+ footer p {
+ color: #666;
+ font-size: 0.9rem;
+ }
+ @media (max-width: 768px) {
+ nav {
+ display: none;
+ }
+ .hamburger {
+ display: flex;
+ }
+ .mobile-menu.active {
+ display: flex;
+ }
+ .hero h1 {
+ font-size: 2.5rem;
+ }
+ .grid-2 {
+ grid-template-columns: 1fr;
+ }
+ .section h2 {
+ font-size: 2rem;
+ }
+ .highlight-box h3 {
+ font-size: 1.5rem;
+ }
+ .logo {
+ font-size: 1.6rem;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t1-shirtsroom-web">
+  <meta property="og:description" content="t1-shirtsroom-web에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://balsan-shirts-note.best-samseong-hotplace.xyz/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+ <div class="logo">셔츠룸<span>웹</span></div>
+ <nav>
+ <a href="https://dydrkrtks7-cmd.github.io">홈</a>
+ <a href="https://dydrkrtks7-cmd.github.io/about">소개</a>
+ <a href="https://dydrkrtks7-cmd.github.io/services">서비스</a>
+ <a href="https://dydrkrtks7-cmd.github.io/contact">연락처</a>
+ </nav>
+ <div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('active')">
+ 
+ 
+ 
+ </div>
+ </div>
+ <div class="mobile-menu">
+ <a href="https://dydrkrtks7-cmd.github.io">홈</a>
+ <a href="https://dydrkrtks7-cmd.github.io/about">소개</a>
+ <a href="https://dydrkrtks7-cmd.github.io/services">서비스</a>
+ <a href="https://dydrkrtks7-cmd.github.io/contact">연락처</a>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0396.html">합정 셔츠룸 단골들이 뽑은 핫플 매거진과 비교하는 셔츠룸 웹 정보 활용 가이드</a>
+        <p class="post-item__summary">오늘도 만족스러운 저녁 시간을 보내기 위해 셔츠룸 웹 이곳저곳을 검색하고 계신가요? 수많은 정보 중에서 자신에게 꼭 맞는 업체를 찾아내는 일은 생각보다 복잡하고 피로한 과정일 수 있습니다. 과연 어</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0397.html">셔츠룸 웹 활용한 구글 신뢰 지수 모발이식 솔루션 구축 절차와 도메인 파워 증폭 방법</a>
+        <p class="post-item__summary">디지털 환경에서 특정 정보의 가치를 판단하는 셔츠룸 웹 분석은 사용자 경험을 최적화하는 데 중요한 기초가 됩니다. 많은 검색 이용자가 정보의 진위 여부를 확인하기 위해 검색 엔진의 알고리즘에 의존하</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0287.html">셔츠룸 웹 활용 전 꼭 알아야 할 연남 클럽 추천정보 이용 가이드</a>
+        <p class="post-item__summary">셔츠룸 웹 정보를 무작정 신뢰하고 방문했다가 낭패를 보는 경우가 생각보다 많습니다. 많은 이용자가 연남 클럽 추천정보를 검색하며 충분한 준비 없이 현장을 찾지만, 당일 예약이 마감되었거나 기대와 다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0288.html">셔츠룸 웹 정보로 확인하는 성공적인 합정 셔츠룸 추천정보 선택법</a>
+        <p class="post-item__summary">셔츠룸 웹 플랫폼에서 제공하는 정보는 시설 선택의 중요한 지표가 되지만, 이를 맹목적으로 믿기보다는 개인의 기준에 맞춰 검증하는 단계가 필수적입니다. 단순히 시설의 규모만 살피기보다는 이용자의 동선</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0289.html">셔츠룸 웹 이용 시 초행자가 알아야 할 공덕 가라오케 추천정보 팁</a>
+        <p class="post-item__summary">평소와 다르게 업무 회식이나 모임 장소를 급하게 찾아야 할 때 셔츠룸 웹 데이터를 조회하는 경우가 많습니다. 막상 목적지에 도착했는데 입구를 찾지 못해 한참을 헤매거나, 예상치 못한 대기 인원 때문</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0290.html">셔츠룸 웹 활용법과 상수 마사지 추천정보 시간대 선택의 중요성</a>
+        <p class="post-item__summary">많은 이들이 셔츠룸 웹 정보를 확인하며 단순히 가격이 저렴한 곳만 찾는 경향이 있는데, 이는 큰 오해를 부를 수 있습니다. 마사지나 힐링 시설은 저렴함보다는 이용 시간대의 혼잡도를 파악하는 것이 만</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0291.html">셔츠룸 웹 활용하여 알아본 망원 노래방 추천정보와 인원 구성 가이드</a>
+        <p class="post-item__summary">쾌적한 환경에서 노래를 즐기기 위해서는 방문 인원과 매장의 수용 능력이 일치해야 합니다. 셔츠룸 웹 정보를 확인하면 자신의 일행에게 적합한 규모의 공간을 찾는 데 큰 도움이 됩니다. 특히 망원 지역</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0292.html">셔츠룸 웹 기반으로 알아보는 홍대 노래방 추천정보 선택의 기준</a>
+        <p class="post-item__summary">여러분은 홍대 근처에서 마음에 쏙 드는 노래방을 찾기 위해 어떤 기준을 먼저 살피시나요. 수많은 업체가 밀집해 있는 만큼 자신만의 명확한 기준이 없다면 선택에 어려움을 겪기 마련입니다. 셔츠룸 웹 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0293.html">셔츠룸 웹 이용 과정과 공덕 셔츠룸 추천정보 신뢰도 확인 절차</a>
+        <p class="post-item__summary">원하는 목적에 맞는 셔츠룸을 방문하기 위해선 체계적인 사전 조사가 선행되어야 합니다. 우선 셔츠룸 웹 플랫폼에 접속하여 해당 지역의 최신 정보를 파악하는 것이 가장 첫 번째 단계입니다. 그 후 제공</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0294.html">셔츠룸 웹 통계 활용 및 연남 유흥 추천정보 가격 판단 기준</a>
+        <p class="post-item__summary">유흥 시설을 선택할 때 흔히 마주하는 고민은 바로 가격이 적정한가에 대한 의문입니다. 화려한 분위기를 선호하는 부류와 실속 있는 가격을 중시하는 부류로 나뉘어 각자의 선택지를 대조하게 됩니다. 셔츠</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0295.html">셔츠룸 웹 활용법과 마곡 가라오케 추천정보 찾는 가이드</a>
+        <p class="post-item__summary">셔츠룸 웹 플랫폼을 통해 장소를 찾는 이용자 중 상당수가 잘못된 경로로 인해 헛걸음하는 경우가 많습니다. 특히 예약 절차를 제대로 숙지하지 않은 채 무작정 방문하는 것은 현장에서 낭패를 보기 쉬운 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0296.html">셔츠룸 웹 접속 전 확인 마곡 유흥 추천정보 체크리스트</a>
+        <p class="post-item__summary">셔츠룸 웹 서비스를 이용하기 전, 방문하고자 하는 장소의 위치와 접근성을 검토하는 것은 매우 중요합니다. 이동 수단이 확보되지 않은 상태에서 무작정 계획을 세우면 현장에서 동선이 꼬이기 마련입니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0297.html">셔츠룸 웹 이용과 합정 노래방 추천정보 초행자 가이드</a>
+        <p class="post-item__summary">최근 합정 지역을 찾은 지인이 노래방 입구에서 한참을 서성이다 돌아왔다는 이야기를 들었습니다. 셔츠룸 웹 등을 통해 정보를 얻었음에도 불구하고 막상 현장 분위기에 익숙하지 않아 당황한 사례입니다. </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
